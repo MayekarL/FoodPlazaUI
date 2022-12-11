@@ -1,0 +1,55 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 container text-center">
+                <mat-card>
+                    <mat-card-header>
+                        <h2 class="= container text-center">Add Food</h2>
+                        
+
+                    </mat-card-header>
+                    <mat-card-content>
+                      
+                        <p>
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Food Name</mat-label>
+                                <input [(ngModel)]="food.name" name="name" matInput placeholder="Food Name">
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Food Price</mat-label>
+                                <input [(ngModel)]="food.price" name="price" type="number" matInput
+                                    placeholder="Food Price">
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Food Type</mat-label>
+                                <mat-select [(ngModel)]="food.type" >
+                                    <mat-option value="Veg">Veg</mat-option>
+                                    <mat-option value="Non-Veg">Non-Veg</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            
+
+                            <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Category</mat-label>
+                                  <mat-select name="categories" [(ngModel)]="food.categories.categoryId">
+                                  
+                                <mat-option *ngFor="let c of categoriesList" 
+                                [value]="c.categoryId">
+                                    {{c.categoryName}}
+                                </mat-option>
+                                </mat-select> 
+                            </mat-form-field>	
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button color="primary" (click)="addFood()">Add Food</button>
+
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="container text-center">
+                <mat-card>
+                    <mat-icon>person</mat-icon>
+                    <h1> Profile Details</h1>
+                    <table class="table container text-center">
+                        <tr>
+                            <td>Email Id </td>
+                            <td>{{user.emailId}}</td>
+                        </tr>
+                        <tr>
+                            <td>Name </td>
+                            <td>{{user.firstName}} {{user.lastName}} </td>
+                        </tr>
+                        <tr>
+                            <td>Age </td>
+                            <td>{{user.age}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender </td>
+                            <td>{{user.gender}} </td>
+                        </tr>
+                        <tr>
+                            <td>Mobile Number </td>
+                            <td>{{user.mobileNo}}</td>
+                        </tr>
+                        <tr>
+                            <td>Birth Date </td>
+                            <td>{{user.birthDate}}</td>
+                        </tr>
+                        <tr>
+                            <td>Account Creation Date </td>
+                            <td>{{user.createDate}}</td>
+                        </tr>
+                    </table>
+                    <mat-action-list>
+                        <button mat-raised-button color="primary" class="mr30" (click)="editProfile()">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-raised-button color="warn" 
+                        style="margin-left: 20px;">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    </mat-action-list>
+                </mat-card>
+
+            </div>
+        </div>
+    </div>
+</div>

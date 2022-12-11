@@ -1,0 +1,48 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="container text-center">
+            <form > 
+            <mat-card class="register" style="margin-top: 20%;" >
+              <mat-card-title>
+                <h1>Login - Food Plaza</h1>
+              </mat-card-title>
+              <div class="container">
+                 
+               
+                  <mat-form-field appearance="fill" class="full-width ">  
+                    <mat-label>Email Id </mat-label>
+                    <input type="email" matInput placeholder="example@gmail.com" 
+                    [(ngModel)]="loginRquest.emailId"
+                    name="emailId"
+                    required>
+                    <mat-icon matSuffix>email</mat-icon>
+                  </mat-form-field>
+  
+                  <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'"
+                    [(ngModel)]="loginRquest.password"
+                    name="password"
+                    >
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </div>
+                
+  
+              <mat-card-actions>
+                <button type="button" (click)="login()" mat-raised-button color="primary">Login</button>
+                <button type="reset" mat-raised-button color="primary">Clear</button>
+              </mat-card-actions>
+            </mat-card>
+          </form>
+          </div>
+        </div>
+  
+  
+      </div>
+    </div>
+  </div>

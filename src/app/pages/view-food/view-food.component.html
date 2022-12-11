@@ -1,0 +1,32 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <h1 class="mt10">Available Foods</h1>  
+        <div class="row mt10" *ngIf="food">
+            <div class="col-md-4 mt10 mb10" *ngFor="let f of food">
+                <mat-card class="mb20">
+                    <mat-card-header>
+                        <mat-card-title>
+                        <h1> {{f.name}} </h1>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="text-center">
+                         <p>Price :  {{f.price}} &#8377;</p>
+                         <p>Ratings : {{f.ratings}}</p>
+                         <p>Type  :{{f.type}} </p>
+                         <p>Category : {{f.categories.categoryName}}</p>
+                    </mat-card-content>
+                    <mat-card-actions class="text-center" >
+                       
+                        <button mat-raised-button                       
+                        color="primary" (click)="cart(f.foodId)"><mat-icon>add</mat-icon></button>
+                 
+                    </mat-card-actions>
+
+                </mat-card>
+            </div>
+
+        
+
+        </div>
+    </div>
+</div>

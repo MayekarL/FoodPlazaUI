@@ -1,0 +1,29 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+      
+        <div class="row" >
+            <div class="col-md-10 container text-center">
+                <mat-card>
+                    <mat-card-header>
+                        <h2 class="container text-center">Add Categories</h2> 
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p>
+                            <mat-form-field appearance="outline" class="full-width">
+                              <mat-label>Category Name</mat-label>
+                              <input 
+                              [(ngModel)]="category.categoryName"
+                                name="categoryName" required
+                              matInput placeholder="Category Name">
+                            </mat-form-field>
+                          </p>
+
+                    </mat-card-content>
+                    <mat-action-list>
+                        <button mat-raised-button color="primary" (click)="addCategory()">Add</button>
+                    </mat-action-list>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

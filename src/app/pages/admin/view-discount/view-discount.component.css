@@ -1,0 +1,9 @@
+.table{
+    width: 100%;
+    border:  #e2e2e2;
+}
+
+table tr td{
+    padding:15px 20px;
+    border: #e2e2e2;
+}

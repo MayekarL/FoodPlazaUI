@@ -1,0 +1,52 @@
+<mat-card>
+    <mat-card-title>
+        <h3>MENU</h3>
+    </mat-card-title>
+    <mat-card-content class="text-center">
+            <!-- USER MODULE START  -->
+        <mat-action-list >
+
+            <button mat-list-item color="primary" [routerLink]="'/admin/dashboard'">
+                <mat-icon>home</mat-icon>Home
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/admin/profile'">
+                <mat-icon>person</mat-icon>Profile
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/admin/add-food'">
+                <mat-icon>add</mat-icon>Add Food
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/admin/add-category'">
+                <mat-icon>add</mat-icon>Add Categories
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/admin/view-category'">
+                <mat-icon>view_list</mat-icon>View Categories
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'//admin/view-food'">
+                <mat-icon>view_list</mat-icon>View Foods
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/admin/add-discount'">
+                <mat-icon>add</mat-icon>Add Discount
+            </button>
+            
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/admin/view-discount'">
+                <mat-icon>view_list</mat-icon>View Discount
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/admin/otp'">
+                <mat-icon>settings</mat-icon>Change Password
+            </button>
+
+        </mat-action-list>
+       
+        
+
+    </mat-card-content>
+</mat-card>
+
+

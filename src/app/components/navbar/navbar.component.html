@@ -1,0 +1,37 @@
+<p>
+  <mat-toolbar color="primary">
+   <button 
+   [routerLink]="'/'"
+   mat-icon-button class="example-icon" 
+   aria-label="Example icon-button with menu icon">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+
+  <a *ngIf="!isLoggedIn()" [routerLink]="'/register'" matTooltip="Register" mat-icon-button class="example-icon"
+    aria-label="Example icon-button with share icon">
+    <mat-icon>app_registration</mat-icon>
+  </a>
+
+  <a *ngIf="!isLoggedIn()"  [routerLink]="'/login'" matTooltip="Login" mat-icon-button class="example-icon"
+  aria-label="Example icon-button with share icon">
+  <mat-icon>login</mat-icon>
+</a>
+
+<a *ngIf="isLoggedIn()" (click)="profile()" matTooltip={{user.firstName}} mat-icon-button class="example-icon"
+aria-label="Example icon-button with share icon">
+
+<mat-icon>person</mat-icon>
+</a>
+
+
+<a *ngIf="isLoggedIn()" (click)="logout()" matTooltip="Logout" mat-icon-button class="example-icon"
+aria-label="Example icon-button with share icon">
+<mat-icon>logout</mat-icon>
+</a>
+
+
+
+</mat-toolbar>
+</p>

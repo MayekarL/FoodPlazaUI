@@ -1,0 +1,48 @@
+<mat-card>
+    <mat-card-title>
+        <h3>MENU</h3>
+    </mat-card-title>
+    <mat-card-content class="text-center">
+            <!-- USER MODULE START  -->
+        <mat-action-list >
+
+            <button mat-list-item color="primary" [routerLink]="'/user/dashboard'">
+                <mat-icon>home</mat-icon>Home
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/user/profile'">
+                <mat-icon>person</mat-icon>Profile
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/user/view-food'">
+                <mat-icon>restaurant_menu</mat-icon>Fresh Menu
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/user/view-category'">
+                <mat-icon>category</mat-icon>Food By Categories
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/user/cart'">
+                <mat-icon>shopping_cart</mat-icon>View Cart
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/user/view-all-bills'">
+                <mat-icon>shopping_cart</mat-icon>View Orders
+            </button>
+
+            <button mat-list-item color="primary" class="mt10" [routerLink]="'/user/otp'">
+                <mat-icon>settings</mat-icon>Change Password
+            </button>
+
+            <button mat-list-item color="primary" class="mt10">
+                <mat-icon>call</mat-icon>Contact US
+            </button>
+
+
+        </mat-action-list>
+       
+        
+
+    </mat-card-content>
+</mat-card>
+

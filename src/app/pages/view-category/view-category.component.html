@@ -1,0 +1,17 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <h1 class="mt10 container text-center">Available Categories</h1>  
+        <div class="row mt10" *ngIf="categories">
+            <div class="col-md-4 mt10 mb10" *ngFor="let c of categories">
+                <mat-card class="mb20">
+                    <mat-card-header (click)="foodByCategory(c.categoryId)">
+                        <mat-card-title>
+                        <h1 class="text-center"> {{c.categoryName}} </h1>
+                        </mat-card-title>
+                    </mat-card-header>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

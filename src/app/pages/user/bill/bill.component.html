@@ -1,0 +1,42 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row" *ngIf="(bill.billId > 0)">
+            <h1 class="container text-center">Your Bill ID : FP20220{{bill.billId}}</h1>
+           
+            <div class="col-md-12">
+                <mat-card>
+                    <table class=" table container text-center mt50">
+                        <tr>
+                            <th>No</th>
+                            <th>Food Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total Price/Food </th>
+                        </tr>
+                        <tr *ngFor="let c of cart;let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{c.foodDto.name}}</td>
+                            <td>{{c.quantity}}</td>
+                            <td>{{c.foodDto.price}}</td>
+                            <td>{{c.foodDto.price * c.quantity}}</td>
+                        </tr>
+                        <tr >
+                            <td colspan="5">
+                               <h2 class="mt10">Your Total Purchase : &#x20B9; {{bill.totalPrice}}</h2>
+                            </td>
+                        </tr>
+                    </table>
+                    <mat-action-list>
+                       
+                    </mat-action-list>
+                </mat-card>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="(bill.billId == 0)">
+            <div class="col-md-12">
+                <h1>No Bills Available</h1>
+            </div>
+        </div>
+    </div>
+</div>

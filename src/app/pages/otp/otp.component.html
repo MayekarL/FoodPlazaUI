@@ -1,0 +1,38 @@
+<div class="bootstrap-wrapper">
+    <div class="container text-center">
+        <mat-card>
+        <div class="row">
+               <div class="ml30" >
+                   <div id="sendOtp" *ngIf="sendOtpClick" class="mt10"> 
+                    <p>Hello {{user.firstName}} Don't worry to reset the password we will sent an  OTP to Your Mail Id which is {{user.emailId}}</p> 
+                    <br>
+                    <button mat-raised-button (click)="sendOtp()" color="primary">Send OTP</button>
+                   </div>
+                   <div id="sendOtp " *ngIf="submitOtpClick"  class="mt10 " >
+                        <mat-form-field appearance="fill" class="container text-center">
+                          <mat-label>Enter Your OTP</mat-label>
+                          <input matInput placeholder="OTP" 
+                          [(ngModel)]="otp"
+                          name="otp">
+                        </mat-form-field>
+                    <br>
+                    <button mat-raised-button color="primary" (click)="verifyOTP()">Submit OTP</button>
+                   </div>
+                   <div id="changePassword" *ngIf="changePassword" class="mt10 ">
+                    <p>
+                        <mat-form-field appearance="fill" class="full-width" >
+                            <mat-label>Enter Your Password</mat-label>
+                            <input matInput placeholder="Password" 
+                            [(ngModel)]="changePasswordRequest.newPassword"
+                            name="password">
+                          </mat-form-field>
+                    </p>
+                      <button mat-raised-button color="primary" (click)="changePasswordCall()">Update Password</button>
+                    </div>
+            </div>
+            <br>           
+        </div>
+        </mat-card>
+        
+    </div>
+</div>

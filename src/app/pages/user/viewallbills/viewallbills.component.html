@@ -1,0 +1,31 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <mat-card>
+                        <table class=" table container text-center mt50">
+                            <tr>
+                                <th>No</th>
+                                <th>Bill Id</th>
+                                <th>Total Price</th>
+                                <th>Order Date</th>
+                                <th>Details</th>
+                            </tr>
+                            <tr *ngFor="let b of bill let i = index">
+                                <td>{{i+1}}</td>
+                                <td>FP2022{{b.billId}}</td>
+                                <td>{{b.totalPrice}}</td>
+                                <td>{{b.billDate}}</td>
+                                <td>
+                                    <button mat-button color="primary" (click)="showBill(b.billId)">
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </mat-card>
+              
+            </div>
+        </div>
+    </div>
+</div>

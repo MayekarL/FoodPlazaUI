@@ -1,0 +1,37 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card>
+                    <table class="table container text-center">
+                        <tr>
+                            <th>No</th>
+                            <th>Promo Code </th>
+                            <th>Promo Type </th>
+                            <th>Promo Value</th>
+                            <th>Minimum Amount</th>
+                            <!-- <th>Author</th> -->
+                            <th>Actions</th>
+                        </tr>
+                        <tr *ngFor="let d of discount;let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{d.promoCode}}</td> 
+                            <td>{{d.promoType}}</td>  
+                            <td> {{d.promoValue}} </td>  
+                            <td>&#8377; {{d.minAmount}}</td>  
+                            <!-- <td>{{d.createdBy}}</td>   -->
+                            <td>
+                                <button mat-button color="primary">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                                <button mat-button color="warn">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

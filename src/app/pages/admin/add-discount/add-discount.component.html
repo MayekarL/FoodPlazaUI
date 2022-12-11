@@ -1,0 +1,56 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12">
+                <mat-card>
+                <h1 class="text-center">Add Discount</h1>
+                    
+                    <mat-card-content   >
+                        <p class="container text-center">
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Promo Code Name</mat-label>
+                                <input [(ngModel)]="discount.promoCode" name="promoCode" matInput placeholder="Promo Code Name">
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Choose an option</mat-label>
+                                <mat-select 
+                                [(ngModel)]="discount.promoType" 
+                                name="promoType" 
+                                >
+                                  <mat-option value="PERCENTAGE">Percentage</mat-option>
+                                  <mat-option value="AMOUNT">Amount</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Promo Code Value</mat-label>
+                                <input type="number" 
+                                [(ngModel)]="discount.promoValue" 
+                                name="promoValue" 
+                                matInput placeholder="Discount Amount">
+                            </mat-form-field>
+                          
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Minimum Amount</mat-label>
+                                <input type="number" 
+                                [(ngModel)]="discount.minAmount" 
+                                name="minAmount" 
+                                matInput placeholder="Maximum Amount">
+                            </mat-form-field>
+
+
+
+                        </p>
+                    </mat-card-content>
+                    <mat-action-list class="container text-center">
+                        <button mat-raised-button color="primary" (click)="addDiscount()">Add</button>
+                    </mat-action-list>
+                </mat-card>
+
+            </div>
+
+        </div>
+    </div>
+</div>

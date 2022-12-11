@@ -1,0 +1,100 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row" *ngIf="!isEmpty()">
+
+            <h1>Your Cart</h1>
+            
+                <div class="col-md-12" >
+                   
+                    <mat-card>
+                    <br>
+                    <table class=" table container text-center mt50" >
+                        <tr>
+                            <th>No</th>
+                            <th>Food Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total Price/Food </th>
+                            <th>Actions</th>
+
+                        </tr>
+
+                        <tr *ngFor="let c of cart;let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{c.foodDto.name}}</td>
+                            <td>
+                                <button (click)="decreaseQuantity(c.foodId,c.quantity,c.cartId)" mat-button
+                                    color="warn">
+                                    <mat-icon>remove</mat-icon>
+                                </button>
+                                {{c.quantity}}
+
+                                <button (click)="increaseQuantity(c.foodId,c.quantity)" mat-button color="primary">
+                                    <mat-icon>add</mat-icon>
+                                </button>
+                            </td>
+                            <td>{{c.foodDto.price}}</td>
+                            <td>{{c.foodDto.price * c.quantity}}</td>
+                            <td>
+                                <button (click)="deleteFoodFromCart(c.cartId)" mat-button color="warn">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr *ngIf="(discountAmount > 0)">
+                            <td colspan="4">Discount</td>
+                            <td>{{discountAmount}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Total Price</td>
+                            <td >{{totalPrice - discountAmount}}</td>
+                        </tr>
+                    </table>
+                    
+
+                    <div class="container text-center mt30">
+
+                        <p class="container text-center">
+                            <mat-form-field appearance="fill" class="full-width">
+                                <mat-label>Discounts Available </mat-label>
+                                <mat-select  
+                                [(ngModel)]="discount.promoValue" 
+                                name="promoValue" >
+                                    <mat-option *ngFor="let d of discount" [value]="d.promoValue">
+                                        {{d.promoCode}} 
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </p>
+
+                        <button  mat-button class="mr10" color="">
+                            <button mat-button (click)="applyDiscount()">Apply Discount
+                                
+                            </button>
+                        </button>
+
+                        <button [routerLink]="'/user/view-category'" mat-button class="mr10" color="accent">Add More
+                            Foods</button>
+
+                        <button mat-raised-button class="ml10" (click)="generateBill()" color="primary">Buy</button>
+
+
+                    </div>
+                    
+                
+            </mat-card>
+        </div>
+
+        
+            
+        </div>
+        <div class="row" *ngIf="isEmpty()">
+            <div class="col-md-12">
+                <div class="container text-center">
+                    <h2 >Your Cart is Empty Please Add Food</h2>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
